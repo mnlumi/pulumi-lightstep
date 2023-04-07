@@ -1,6 +1,6 @@
 # Foo Resource Provider
 
-The Foo Resource Provider lets you manage [Foo](http://example.com) resources.
+The Lightstep Provider lets you manage [Lightstep](https://lightstep.com/) resources.
 
 ## Installing
 
@@ -17,7 +17,7 @@ npm install @pulumi/foo
 or `yarn`:
 
 ```bash
-yarn add @pulumi/foo
+yarn add @pulumi/lightstep
 ```
 
 ### Python
@@ -25,7 +25,7 @@ yarn add @pulumi/foo
 To use from Python, install using `pip`:
 
 ```bash
-pip install pulumi_foo
+pip install pulumi_lightstep
 ```
 
 ### Go
@@ -33,7 +33,7 @@ pip install pulumi_foo
 To use from Go, use `go get` to grab the latest version of the library:
 
 ```bash
-go get github.com/pulumi/pulumi-foo/sdk/go/...
+go get github.com/mnlumi/pulumi-lightstep/sdk/go/...
 ```
 
 ### .NET
@@ -41,16 +41,16 @@ go get github.com/pulumi/pulumi-foo/sdk/go/...
 To use from .NET, install using `dotnet add package`:
 
 ```bash
-dotnet add package Pulumi.Foo
+dotnet add package Pulumi.Lightstep
 ```
 
 ## Configuration
 
-The following configuration points are available for the `foo` provider:
+The following configuration points are available for the `lightstep` provider:
 
-- `foo:apiKey` (environment: `FOO_API_KEY`) - the API key for `foo`
-- `foo:region` (environment: `FOO_REGION`) - the region in which to deploy resources
+- `lighstep:apiKey` (environment: `LIGHTSTEP_API_KEY`) - the API key for `foo`
+- `lighstep:organization` (environment: `LIGHTSTEP_ORGANIZATION`) - the region in which to deploy resources
 
 ## Reference
 
-For detailed reference documentation, please visit [the Pulumi registry](https://www.pulumi.com/registry/packages/foo/api-docs/).
+For detailed reference documentation, please visit [the Pulumi registry](https://www.pulumi.com/registry/packages/lighstep/api-docs/).
