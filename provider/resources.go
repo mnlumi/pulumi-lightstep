@@ -23,7 +23,7 @@ import (
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
-	"github.com/lightstep/terraform-provider-lightstep"
+	"github.com/lightstep/terraform-provider-lightstep/lightstep"
 )
 
 // all of the token components used below.
@@ -105,11 +105,23 @@ func Provider() tfbridge.ProviderInfo {
 			// 		"tags": {Type: tfbridge.MakeType(mainPkg, "Tags")},
 			// 	},
 			// },
+			"lightstep_alert": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Alert")},
+			"lightstep_alerting_rule": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "AlertRule")},
+			"lightstep_dashboard": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Dashboard")},
+			"lightstep_metric_condition": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "MetricCondition")},
+			"lightstep_metric_dashboard": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "MetricDashboard")},
+			"lightstep_pagerduty_destination": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "PagerdutyDestination")},
+			"lightstep_slack_destination": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "SlackDestination")},
+			"lightstep_stream": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Stream")},
+			"lightstep_stream_condition": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "StreamCondition")},
+			"lightstep_stream_dashboard": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "StreamDashboard")},
+			"lightstep_webhook_destination": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "WebhookDestination")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			// Map each resource in the Terraform provider to a Pulumi function. An example
 			// is below.
 			// "aws_ami": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAmi")},
+			"lightstep_stream": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getStream")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
